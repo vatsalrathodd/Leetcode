@@ -1,0 +1,45 @@
+//{ Driver Code Starts
+// Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+// User function template in C++
+
+class Solution {
+  public:
+    // Function to return the position of the first repeating element.
+    int firstRepeated(int arr[], int n) {
+        
+        // for(int i=0; i<n; i++)
+        // {
+        //     bool isRepeated = false;
+        //     for(int j=i+1; j<n; j++)
+        //     {
+        //         if(arr[i] == arr[j])
+        //         {
+        //             isRepeated = true;
+        //             return i+1;
+        //         }
+        //     }
+        // }
+        // return -1;
+        
+        unordered_map<int,int>map;
+        
+        for(int i=0; i<n; i++)
+        {
+            map[arr[i]]++;
+        }
+        
+        for(int i=0; i<n; i++)
+        {
+            if(map[arr[i]] >1)
+            {
+                return i+1;
+            }
+        }
+        return -1;
+    }
+};
