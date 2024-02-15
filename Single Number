@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        for(int i=0; i<nums.size(); i++)
+        {
+            sort(nums.begin(), nums.end());
+
+            int element = nums[i];
+
+            for(int j=i; j<element; j++)
+            {
+                nums[j] = -1;
+            }
+        }
+    }
+};
